@@ -1,0 +1,21 @@
+# Aqui ficará a lista de sites PERMITIDOS
+
+# Exemplos de como permitir:
+
+# Permitir todos os subdomínios de um domínio (lembre-se de remover a # do início da linha)
+# @@||facebook.com^$important
+
+# Permitir um domínio específico (lembre-se de remover a # do início da linha)
+# @@||facebook.com$important
+
+# Permitir qualquer domínio que contenha um termo específico
+# @@/facebook/$important
+
+# Insira os sites permitidos abaixo:
+
+
+# Itaú
+@@||itau.com.br^$important
+
+# GG.gg
+@@||gg.gg^$important
