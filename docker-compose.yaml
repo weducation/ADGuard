@@ -1,0 +1,19 @@
+services:
+  adguard:
+    image: weducation/adguard
+    hostname: adguard
+    container_name: adguard
+    restart: unless-stopped
+    network_mode: host
+
+  watchtower:
+    image: containrrr/watchtower
+    hostname: watchtower
+    container_name: watchtower
+    restart: unless-stopped
+    environment:
+      - TZ=America/Sao_Paulo
+      - WATCHTOWER_CLEANUP=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
