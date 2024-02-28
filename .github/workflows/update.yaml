@@ -1,0 +1,105 @@
+# Action to run "docker compose down" then "docker compose up -d" on our servers after a push to the main branch
+
+# So we force the ADGuard container to repull the new rules.
+
+name: Update
+run-name: Update
+on: 
+  push:
+    branches: main
+  workflow_dispatch:
+jobs:
+  update-emece:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Atualizando EMECE
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.EMECE }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd /opt/ADGuard
+          docker compose down adguard
+          docker compose up adguard -d
+
+
+  update-criem:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Atualizando CRIEM
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.CRIEM }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd /opt/ADGuard
+          docker compose down adguard
+          docker compose up adguard -d
+
+
+  update-claritas:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Atualizando CLARITAS
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.CLARITAS }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd /opt/ADGuard
+          docker compose down adguard
+          docker compose up adguard -d
+
+
+  update-italo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Atualizando ITALO
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.ITALO }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd /opt/ADGuard
+          docker compose down adguard
+          docker compose up adguard -d
+
+
+  update-mdsp:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Atualizando MDSP
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.MDSP }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd /opt/ADGuard
+          docker compose down adguard
+          docker compose up adguard -d
+
+
+  update-mdsjc:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Atualizando MDSJC
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.MDSJC }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd /opt/ADGuard
+          docker compose down adguard
+          docker compose up adguard -d
