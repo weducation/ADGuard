@@ -12,7 +12,7 @@
 # /facebook/$important
 
 # Insira os sites bloqueados abaixo:
-
+||crazygames.com.br^$importante
 
 # Placeholder pois o ADGuard não aceita listas vazias ( remova caso alguma adição real aconteça)
 ||placeholder.tl$important
