@@ -4,102 +4,97 @@
 
 name: Update
 run-name: Update
-on: 
+on:
   push:
     branches: main
   workflow_dispatch:
 jobs:
-  update-emece:
+  EMECE:
     runs-on: ubuntu-latest
     steps:
-    - name: Atualizando EMECE
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.EMECE }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd /opt/ADGuard
-          docker compose down adguard
-          docker compose up adguard -d
+      - name: Atualizando EMECE
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EMECE }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /opt/ADGuard
+            docker compose down adguard
+            docker compose up adguard -d
 
-
-  update-criem:
+  CRIEM:
     runs-on: ubuntu-latest
     steps:
-    - name: Atualizando CRIEM
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.CRIEM }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd /opt/ADGuard
-          docker compose down adguard
-          docker compose up adguard -d
+      - name: Atualizando CRIEM
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.CRIEM }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /opt/ADGuard
+            docker compose down adguard
+            docker compose up adguard -d
 
-
-  update-claritas:
+  CLARITAS:
     runs-on: ubuntu-latest
     steps:
-    - name: Atualizando CLARITAS
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.CLARITAS }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd /opt/ADGuard
-          docker compose down adguard
-          docker compose up adguard -d
+      - name: Atualizando CLARITAS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.CLARITAS }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /opt/ADGuard
+            docker compose down adguard
+            docker compose up adguard -d
 
-
-  update-italo:
+  ITALO:
     runs-on: ubuntu-latest
     steps:
-    - name: Atualizando ITALO
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.ITALO }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd /opt/ADGuard
-          docker compose down adguard
-          docker compose up adguard -d
+      - name: Atualizando ITALO
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.ITALO }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /opt/ADGuard
+            docker compose down adguard
+            docker compose up adguard -d
 
-
-  update-mdsp:
+  MDSP:
     runs-on: ubuntu-latest
     steps:
-    - name: Atualizando MDSP
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.MDSP }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd /opt/ADGuard
-          docker compose down adguard
-          docker compose up adguard -d
+      - name: Atualizando MDSP
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.MDSP }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /opt/ADGuard
+            docker compose down adguard
+            docker compose up adguard -d
 
-
-  update-mdsjc:
+  MDSJC:
     runs-on: ubuntu-latest
     steps:
-    - name: Atualizando MDSJC
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.MDSJC }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd /opt/ADGuard
-          docker compose down adguard
-          docker compose up adguard -d
+      - name: Atualizando MDSJC
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.MDSJC }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /opt/ADGuard
+            docker compose down adguard
+            docker compose up adguard -d
