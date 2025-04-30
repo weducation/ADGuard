@@ -17,3 +17,7 @@
 # Insira os sites bloqueados abaixo:
 ## A pedido da coordenadora Regina Ratto. MDSP
 ||crazygames.*^$important
+
+## Conteúdo 18+
+||camgo.*^$important
+||emojidb.*^$important
