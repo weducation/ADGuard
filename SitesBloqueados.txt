@@ -21,3 +21,6 @@
 ## Conteúdo 18+
 ||camgo.*^$important
 ||emojidb.*^$important
+||polybuzz.*^$important
+||character.*^$important
+||youzeek.*^$important
